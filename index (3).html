@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Facebook Creator Niche Map — by Sifu Yik</title>
+<meta name="description" content="A searchable map of Facebook creator niches, with a one-line content angle for each. By Sifu Yik." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,620;9..144,700&family=Outfit:wght@370;480;580&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper: #f3eee4;
+    --paper-2: #e7e0d2;
+    --card: #fffaf3;
+    --ink: #1b2418;
+    --muted: #5c6556;
+    --line: rgba(27, 36, 24, 0.12);
+    --green: #1e4a38;
+    --green-2: #2f6a50;
+    --ember: #c24b2e;
+    --gold: #a78445;
+    --shadow: 0 18px 40px rgba(48, 36, 18, 0.08);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    color: var(--ink);
+    background:
+      radial-gradient(1000px 480px at 90% -10%, rgba(194, 75, 46, 0.14), transparent 55%),
+      radial-gradient(900px 500px at -10% 8%, rgba(30, 74, 56, 0.12), transparent 50%),
+      var(--paper);
+    font-family: Outfit, sans-serif;
+    font-weight: 370;
+    line-height: 1.5;
+  }
+  a { color: inherit; }
+  .wrap { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+  header.top {
+    position: sticky; top: 0; z-index: 20;
+    backdrop-filter: blur(14px);
+    background: rgba(243, 238, 228, 0.88);
+    border-bottom: 1px solid var(--line);
+  }
+  .top-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; padding: 14px 0;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .mark {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: conic-gradient(from 210deg, var(--green), var(--gold), var(--ember), var(--green));
+    display: grid; place-items: center;
+  }
+  .mark span {
+    width: 28px; height: 28px; border-radius: 50%; background: var(--paper);
+    display: grid; place-items: center;
+    font-family: Fraunces, serif; font-weight: 700; font-size: 14px; color: var(--green);
+  }
+  .brand b { display: block; font-family: Fraunces, serif; font-size: 15px; letter-spacing: -0.02em; }
+  .brand small { color: var(--muted); font-size: 12px; }
+  .top-cta {
+    text-decoration: none; background: var(--green); color: #f7f3ea;
+    padding: 10px 14px; border-radius: 999px; font-size: 14px; font-weight: 580;
+  }
+  .top-cta:hover { background: #16382b; }
+  .hero { padding: 54px 0 18px; }
+  .kicker {
+    display: inline-flex; align-items: center; gap: 8px;
+    letter-spacing: 0.14em; text-transform: uppercase; font-size: 12px; font-weight: 580;
+    color: var(--ember);
+  }
+  .kicker i { width: 18px; height: 1px; background: var(--ember); display: inline-block; }
+  h1 {
+    font-family: Fraunces, serif; font-weight: 620; letter-spacing: -0.035em;
+    font-size: clamp(40px, 6vw, 72px); line-height: 0.96; margin: 12px 0 16px;
+  }
+  h1 em { font-style: italic; color: var(--green); }
+  .lede { max-width: 640px; font-size: 18px; color: #2c3828; margin: 0 0 22px; }
+  .stats { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 22px; }
+  .stat {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 10px 14px; min-width: 120px;
+  }
+  .stat b { display: block; font-family: Fraunces, serif; font-size: 22px; }
+  .stat span { color: var(--muted); font-size: 12px; }
+  .how {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 8px 0 28px;
+  }
+  .how article {
+    background: rgba(255, 250, 243, 0.7); border: 1px solid var(--line); border-radius: 16px; padding: 14px 16px;
+  }
+  .how strong { font-family: Fraunces, serif; display: block; margin-bottom: 4px; }
+  .how p { margin: 0; color: var(--muted); font-size: 14px; }
+  .controls { position: sticky; top: 64px; z-index: 15; padding: 8px 0 12px; }
+  .search {
+    width: 100%; border: 1px solid var(--line); background: var(--card);
+    border-radius: 16px; padding: 14px 16px; font: inherit; font-size: 16px; color: var(--ink);
+    box-shadow: var(--shadow);
+  }
+  .search:focus { outline: 2px solid rgba(30, 74, 56, 0.35); }
+  .chips { display: flex; gap: 8px; overflow: auto; padding: 12px 0 4px; scrollbar-width: none; }
+  .chips::-webkit-scrollbar { display: none; }
+  .chip {
+    border: 1px solid var(--line); background: transparent; color: var(--ink);
+    border-radius: 999px; padding: 8px 12px; font: inherit; font-size: 13px; white-space: nowrap; cursor: pointer;
+  }
+  .chip.on { background: var(--green); color: #f7f3ea; border-color: var(--green); }
+  .meta-row { display: flex; justify-content: space-between; gap: 12px; align-items: center; color: var(--muted); font-size: 13px; padding-bottom: 8px; }
+  .section { margin: 22px 0 34px; }
+  .section-head { display: flex; justify-content: space-between; gap: 12px; align-items: end; margin-bottom: 12px; }
+  .section h2 { font-family: Fraunces, serif; font-size: 32px; letter-spacing: -0.03em; margin: 0; }
+  .tag {
+    display: inline-block; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--gold); font-weight: 580; margin-bottom: 4px;
+  }
+  .section .blurb { color: var(--muted); margin: 6px 0 0; max-width: 640px; }
+  .count-pill { color: var(--muted); font-size: 13px; }
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 16px 16px 14px;
+    display: flex; flex-direction: column; gap: 8px; min-height: 148px;
+  }
+  .card h3 { margin: 0; font-size: 18px; font-weight: 580; letter-spacing: -0.02em; }
+  .card p { margin: 0; color: #3d4a38; font-size: 15px; }
+  .card .row { margin-top: auto; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .card .parent { font-size: 12px; color: var(--muted); }
+  .copy {
+    border: 1px solid var(--line); background: #f6f1e7; border-radius: 999px;
+    padding: 6px 10px; font: inherit; font-size: 12px; cursor: pointer; color: var(--green);
+  }
+  .copy:hover { border-color: var(--green); }
+  .empty { display: none; text-align: center; padding: 40px 10px; color: var(--muted); }
+  .live {
+    margin: 28px 0 18px; border-radius: 28px; overflow: hidden;
+    background: linear-gradient(135deg, #f4b942 0%, #e07a2f 42%, #c24b2e 100%);
+    color: #1b140c; padding: 28px 28px 26px;
+    display: grid; grid-template-columns: 1.35fr 0.75fr; gap: 18px; align-items: center;
+    box-shadow: 0 22px 40px rgba(194, 75, 46, 0.22);
+  }
+  .live .pill {
+    display: inline-block; background: #1b140c; color: #f6e7c4;
+    font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 580;
+    padding: 6px 10px; border-radius: 999px; margin-bottom: 12px;
+  }
+  .live h2 {
+    font-family: Fraunces, serif; font-size: clamp(30px, 4vw, 46px);
+    line-height: 0.98; letter-spacing: -0.03em; margin: 0 0 10px;
+  }
+  .live p { margin: 0 0 16px; font-size: 16px; }
+  .live a.btn {
+    display: inline-block; text-decoration: none; background: #1b140c; color: #f8e7c8;
+    padding: 12px 16px; border-radius: 999px; font-weight: 580;
+  }
+  .live a.btn:hover { background: #000; }
+  .live aside {
+    background: rgba(27, 20, 12, 0.12); border: 1px solid rgba(27, 20, 12, 0.18);
+    border-radius: 18px; padding: 16px;
+  }
+  .live aside b { font-family: Fraunces, serif; display: block; font-size: 22px; margin-bottom: 4px; }
+  .live aside span { display: block; font-size: 14px; }
+  .cta {
+    margin: 10px 0 54px; border-radius: 28px; overflow: hidden;
+    background: linear-gradient(145deg, #1e4a38, #2a5c42 55%, #8d3d28);
+    color: #f7f3ea; padding: 36px 32px; display: grid; grid-template-columns: 1.4fr 0.8fr; gap: 18px;
+  }
+  .cta h2 { font-family: Fraunces, serif; font-size: clamp(32px, 4vw, 48px); line-height: 1; letter-spacing: -0.03em; margin: 0 0 10px; }
+  .cta p { margin: 0 0 16px; color: rgba(247, 243, 234, 0.86); }
+  .cta a.btn {
+    display: inline-block; text-decoration: none; background: #f4efe4; color: var(--green);
+    padding: 12px 16px; border-radius: 999px; font-weight: 580; margin-right: 8px;
+  }
+  .cta a.ghost { color: #f7f3ea; text-decoration: underline; text-underline-offset: 3px; }
+  .cta aside {
+    background: rgba(255,250,243,0.08); border: 1px solid rgba(255,250,243,0.16);
+    border-radius: 18px; padding: 16px;
+  }
+  .cta aside b { font-family: Fraunces, serif; display: block; margin-bottom: 6px; }
+  footer { padding: 8px 0 36px; color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  @media (max-width: 800px) {
+    .how, .grid, .cta, .live { grid-template-columns: 1fr; }
+    .controls { top: 60px; }
+    h1 { font-size: 42px; }
+  }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="#top">
+      <div class="mark"><span>Y</span></div>
+      <div><b>Sifu Yik</b><small>Facebook creator niche map</small></div>
+    </a>
+    <a class="top-cta" href="https://sifuyik.substack.com" target="_blank" rel="noopener">Get the system</a>
+  </div>
+</header>
+<main id="top">
+  <section class="hero wrap">
+    <div class="kicker"><i></i> By Sifu Yik</div>
+    <h1>Pick a Facebook niche.<br><em>Post the angle.</em></h1>
+    <p class="lede">Welcome home, fam. This is the creator map I use when a page needs a lane. Every niche from the Facebook list is here, with one line on what to actually post. Search it. Copy it. Do not try to cover the whole board.</p>
+    <div class="stats">
+      <div class="stat"><b>51</b><span>lanes on the map</span></div>
+      <div class="stat"><b>274</b><span>niches with an angle</span></div>
+      <div class="stat"><b>122</b><span>from the core taxonomy</span></div>
+      <div class="stat"><b>152</b><span>discovery interests</span></div>
+    </div>
+    <div class="how">
+      <article><strong>1. Pick one lane</strong><p>A parent category is a neighborhood. A niche is the street you post on.</p></article>
+      <article><strong>2. Use the angle</strong><p>Each card is a first post, not a brand manifesto. Film that, then repeat the format.</p></article>
+      <article><strong>3. Capture three pages</strong><p>Find who already wins in that niche. Study the hook before you invent one.</p></article>
+    </div>
+  </section>
+  <div class="wrap controls">
+    <input class="search" id="q" type="search" placeholder="Search niches, angles, or categories…" autocomplete="off" />
+    <div class="chips" id="chips"></div>
+    <div class="meta-row"><span id="shown"></span><button class="copy" id="clear" type="button">Clear</button></div>
+  </div>
+  <div class="wrap" id="board"></div>
+  <p class="empty wrap" id="empty">Nothing in that search. Try a broader word — pets, food, comedy, cars.</p>
+  <section class="wrap live" id="live">
+    <div>
+      <div class="pill">This Saturday · 3PM SGT</div>
+      <h2>Join Facebook Monetisation Training.</h2>
+      <p>Welcome home, fam. Saturday, 10 October, 3PM Singapore time. We go live on how to turn a Facebook niche into monetisation. The live training link is on Sifu Yik’s Substack — join there so you do not miss the room.</p>
+      <a class="btn" href="https://sifuyik.substack.com" target="_blank" rel="noopener">Join Substack for the live link</a>
+    </div>
+    <aside>
+      <b>Sat · 3PM SGT</b>
+      <span>Facebook Monetisation Training<br>Link drops on the Substack.<br>By Sifu Yik.</span>
+    </aside>
+  </section>
+  <section class="wrap cta">
+    <div>
+      <div class="kicker" style="color:#f0c7b6"><i style="background:#f0c7b6"></i> Next step</div>
+      <h2>A niche is not a business. A system is.</h2>
+      <p>Pick the lane here. Then come get the prompts, the page system, and the AI Money Farm training on Substack. I built this map so you stop guessing what to post.</p>
+      <a class="btn" href="https://sifuyik.substack.com" target="_blank" rel="noopener">Join Sifu Yik on Substack</a>
+      <a class="ghost" href="https://sifuyik.substack.com" target="_blank" rel="noopener">5-Day AI Training + AI Money Farm</a>
+    </div>
+    <aside>
+      <b>How I would use this tonight</b>
+      <p style="margin:0;color:rgba(247,243,234,.86)">Choose one niche. Copy the angle. Post it. Then capture three Facebook pages already living in that lane and note the hook they repeat.</p>
+    </aside>
+  </section>
+  <footer class="wrap">
+    <div>Facebook Creator Niche Map · by Sifu Yik</div>
+    <div>Angles are posting starts, not official Facebook copy.</div>
+  </footer>
+</main>
+<script>
+const DATA = [{"id": "animals", "name": "Animals & Pets", "kicker": "Core taxonomy", "blurb": "The easiest scroll-stop on Facebook. Faces, routines, and care advice travel further than product posts.", "items": [{"name": "Birds", "angle": "Close-up calls, feeding routines, and one myth about a common backyard bird."}, {"name": "Cute animals", "angle": "A 6-second soft moment with a caption that names the feeling, not the product."}, {"name": "Farm animals", "angle": "Morning chores, named animals, and one thing city viewers always get wrong."}, {"name": "Funny animals", "angle": "One fail or timing joke, cut before the laugh dies. No long setup."}, {"name": "Pet Food (animals)", "angle": "Ingredient check, portion reality, and a before/after bowl — not a hard sell."}, {"name": "Pet health", "angle": "One symptom owners miss, plus when to call a vet instead of guessing."}, {"name": "Pet training", "angle": "One cue, one mistake, one 10-second demo. Repeat the same format daily."}, {"name": "Veterinarians (occupation)", "angle": "Day-in-the-life clips and myth-busts from the exam room."}, {"name": "Aquatic animals", "angle": "Tank setups, feeding, and the one water mistake that kills fish."}, {"name": "Wildlife", "angle": "Trail-cam stills, seasonal behavior, and a place people can actually visit."}]}, {"id": "books", "name": "Books & Literature", "kicker": "Core taxonomy", "blurb": "Quiet niches with loyal readers. Post the page, the line, and the reason it hit.", "items": [{"name": "Fiction", "angle": "One scene, one line, and who should read it this weekend."}, {"name": "Newspapers & Magazines", "angle": "A cover, a headline, and the story behind the story."}, {"name": "Non-fiction", "angle": "One idea from a chapter, applied to a real week — not a book report."}, {"name": "Poetry", "angle": "Read one short poem on camera. Leave the last line on screen."}, {"name": "Internet Memes (subject)", "angle": "Break down why a meme format works, then make one in that format."}]}, {"id": "education", "name": "Education & Learning", "kicker": "Core taxonomy", "blurb": "Teach one thing per post. Save-worthy beats clever.", "items": [{"name": "Language learning", "angle": "One phrase, the wrong way locals hear it, and a 5-second drill."}, {"name": "Online education", "angle": "A tool walkthrough with the exact click path, not a course trailer."}, {"name": "Life hacks", "angle": "One hack, filmed in the room where people actually need it."}]}, {"id": "fashion", "name": "Fashion & Style", "kicker": "Core taxonomy", "blurb": "Show the outfit, then the decision. Advice outperforms lookbooks.", "items": [{"name": "Hair Care & Styling (product)", "angle": "Before, product, after — name the hair type it is for."}, {"name": "Nail polish & art", "angle": "A 15-second set with the color name on screen the whole time."}, {"name": "Tattoos", "angle": "Meaning, placement, and the healing week people never film."}, {"name": "Jewelry Design", "angle": "Sketch to finished piece, with the metal and the story."}, {"name": "Clothing and accessories", "angle": "One piece, three ways, on a real body — not a flat lay only."}, {"name": "Fashion advice & commentary", "angle": "A hot take on a trend, then the version that still works next season."}, {"name": "Outfit of the Day", "angle": "Full look in 8 seconds, then the one item that makes it."}]}, {"id": "fitness", "name": "Fitness & Workouts", "kicker": "Core taxonomy", "blurb": "Form first. One move, one cue, one reason it matters.", "items": [{"name": "Gym workouts", "angle": "One exercise, the common cheat, and a 3-set prescription on screen."}]}, {"id": "food", "name": "Food & Drink", "kicker": "Core taxonomy", "blurb": "Sound, hands, and the first bite. Recipes that fit a weeknight win.", "items": [{"name": "Food Awards & Reviews", "angle": "One dish, a score, and the bite that decided it."}, {"name": "Growing and production of food", "angle": "Seed to plate in a short sequence, with the season named."}, {"name": "Healthy recipes", "angle": "5 ingredients, one pan, macros only if they change the choice."}, {"name": "Mukbang (video)", "angle": "Honest portions and the story of the meal, not silent eating only."}, {"name": "Regional cuisines", "angle": "One dish from home, the ingredient people substitute wrong."}, {"name": "Restaurants by Type", "angle": "A type tour — ramen, bakeries, late-night — with the order to copy."}]}, {"id": "games", "name": "Games, Puzzles, & Play", "kicker": "Core taxonomy", "blurb": "Show the turn, the rule, or the clutch. Viewers stay for the decision.", "items": [{"name": "Board games", "angle": "Teach one rule by playing one turn. Name the game on screen."}, {"name": "Role-playing games", "angle": "A character moment or a table story, cut to the punchline."}, {"name": "Toys", "angle": "Unbox, play, and say who it is actually for."}, {"name": "E-sports", "angle": "One play, the read behind it, and the team context in a line."}, {"name": "Mobile Games", "angle": "A 20-second clear, the tip, and the level number."}, {"name": "Video Game Reviews & News (subject)", "angle": "The news in one sentence, then whether it changes what you play tonight."}]}, {"id": "health", "name": "Health & Medical", "kicker": "Core taxonomy", "blurb": "Stay practical and careful. Teach habits, do not diagnose.", "items": [{"name": "Personal development", "angle": "One habit, the trigger, and what changed after 7 days."}]}, {"id": "history", "name": "History & Philosophy", "kicker": "Core taxonomy", "blurb": "One object, one question, one answer people can repeat.", "items": [{"name": "Archaeology", "angle": "One find, where it was, and what it changes about the story."}]}, {"id": "holidays", "name": "Holidays & Celebrations", "kicker": "Core taxonomy", "blurb": "Seasonal spikes. Post the plan two weeks before the day.", "items": [{"name": "Event planning", "angle": "A checklist for one event type, filmed while you set the table."}, {"name": "Halloween", "angle": "Costume, decor, or treat — one idea people can copy this week."}]}, {"id": "home", "name": "Home & Garden", "kicker": "Core taxonomy", "blurb": "Before and after still stops the scroll. Name the budget.", "items": [{"name": "Home furnishings and appliances", "angle": "One piece, why it earned the space, and the size that actually fits."}]}, {"id": "music", "name": "Music & Audio", "kicker": "Core taxonomy", "blurb": "Hook in the first two seconds. Credit the original when you cover.", "items": [{"name": "Parody music", "angle": "Rewrite one chorus about a pain the audience already has."}, {"name": "Podcasts", "angle": "A 30-second clip with the question on screen, then the answer."}, {"name": "Concert performances", "angle": "The crowd, the drop, and where to see them next."}, {"name": "Electronic and dance music", "angle": "A loop build, the drop, and the track name."}, {"name": "Lip syncing", "angle": "One lyric, full commitment, cut on the last word."}, {"name": "Music Covers", "angle": "Original in one bar, your version in the next. Name both."}, {"name": "Music Reviews (media content)", "angle": "First listen reaction, then the track you would replay."}, {"name": "Music videos", "angle": "Breakdown of one shot, or your own video in a single location."}, {"name": "Musical theatre", "angle": "One number, the story beat, and why the lyric lands."}]}, {"id": "performing", "name": "Performing Arts", "kicker": "Core taxonomy", "blurb": "Performance niches live on timing. Film the bit, not the backstory.", "items": [{"name": "Practical Jokes (activity)", "angle": "A clean setup and a reaction. Skip anything mean-spirited."}, {"name": "Sketch comedy", "angle": "One premise, 20 seconds, end on the button."}, {"name": "Stand-up comedy", "angle": "One joke, tight, with the room sound left in."}, {"name": "Dance Lessons", "angle": "Counts on screen. One eight-count, then the full phrase."}, {"name": "Hip-hop dance", "angle": "The move, the music cue, and a slower second take."}, {"name": "Theatre", "angle": "A monologue beat or a backstage minute before curtain."}]}, {"id": "relationships", "name": "Relationships, Friends, & Family", "kicker": "Core taxonomy", "blurb": "Small rituals outperform advice essays.", "items": [{"name": "Birthdays", "angle": "A setup people can copy: the note, the table, the 10-second surprise."}]}, {"id": "science", "name": "Science & Tech", "kicker": "Core taxonomy", "blurb": "Show the thing working. Curiosity plus a clear next click.", "items": [{"name": "ASMR", "angle": "One trigger, clean audio, no talking over the sound."}, {"name": "Vlogging (activity)", "angle": "A day with one thread — the errand, the meal, the point."}, {"name": "Experiments", "angle": "Hypothesis, test, result. Keep the mess in frame."}, {"name": "Social sciences", "angle": "One study, what it actually found, and the limit."}, {"name": "Apps & software", "angle": "One job the app does, filmed as a screen recording with your voice."}, {"name": "Artificial Intelligence (technology)", "angle": "One workflow, the prompt, and the before/after."}, {"name": "Video Game Streaming", "angle": "A highlight with the call, not a full VOD dump."}]}, {"id": "sports", "name": "Sports", "kicker": "Core taxonomy", "blurb": "Skill clips and explainers beat score recaps unless you are first.", "items": [{"name": "Diving", "angle": "Entry, splash, and the cue that fixed the dive."}, {"name": "Fishing", "angle": "The cast, the bite, and the lure that worked today."}, {"name": "Baseball", "angle": "One mechanic — swing, pitch, or read — in slow motion."}, {"name": "Basketball", "angle": "A move with the footwork called out."}, {"name": "Combat sports", "angle": "One technique, the setup, and the safety note."}, {"name": "American football", "angle": "A route, a block, or a rule people argue about."}, {"name": "Golf", "angle": "One swing thought and the ball flight that followed."}, {"name": "Gymnastics", "angle": "A skill progression from drill to full."}, {"name": "Hockey and its related sports", "angle": "A skate drill or a play breakdown with the ice marked."}, {"name": "Running", "angle": "A workout, the pace, and how the legs felt at mile two."}, {"name": "Football", "angle": "A skill move or a match moment with the why."}, {"name": "Sporting Goods & Equipment", "angle": "Gear test in the actual sport, not on a table only."}, {"name": "Water sports", "angle": "The start, the line, and the condition of the water."}, {"name": "Winter sports", "angle": "A line down the hill, plus the condition report."}]}, {"id": "tv", "name": "TV & Movies", "kicker": "Core taxonomy", "blurb": "Opinion plus a clip-safe still. Spoilers get labeled.", "items": [{"name": "Documentary", "angle": "The claim, the scene that proves it, and where to watch."}, {"name": "Game shows", "angle": "A round explained, then a home version people can play."}, {"name": "Popular Actors", "angle": "One role, one choice they made, and why it worked."}, {"name": "Reality TV shows", "angle": "The moment, the edit, and your read — labeled as opinion."}, {"name": "Short Films (tv & film)", "angle": "Logline in a sentence, then the frame that sells it."}, {"name": "TV & Movie Characters (person)", "angle": "A character read: want, flaw, and the scene that shows both."}, {"name": "TV and film reviews", "angle": "Verdict first, then the one reason."}]}, {"id": "travel", "name": "Travel & Leisure Activities", "kicker": "Core taxonomy", "blurb": "Specific places beat generic wanderlust. Name the cost.", "items": [{"name": "Unboxing (activity)", "angle": "Hands, sound, and the first useful thing inside."}, {"name": "Deals & Promotions (commerce)", "angle": "The deal, the real price, and who should skip it."}, {"name": "Beachcombing (activity)", "angle": "What you found, the tide, and the leave-no-trace rule."}, {"name": "Bushcraft (activity)", "angle": "One skill — fire, shelter, knot — with the safety line."}, {"name": "Camping", "angle": "The setup in order, and the thing you forgot last time."}, {"name": "Hiking", "angle": "Trail name, distance, and the view at the turnaround."}, {"name": "Nature landmarks & destinations", "angle": "How to actually get there, and the hour with the light."}, {"name": "Hobbies (activity)", "angle": "Start a project on camera and show the next session."}, {"name": "Travel plans", "angle": "A 3-stop plan with budget bands, not a mood board."}, {"name": "Travel tips", "angle": "One mistake, the fix, and the app or habit that prevents it."}]}, {"id": "vehicles", "name": "Vehicles & Transportation", "kicker": "Core taxonomy", "blurb": "Sound and detail shots. Buyers want the number and the compromise.", "items": [{"name": "Aircraft", "angle": "A walkaround, the sound, and one fact non-pilots get wrong."}, {"name": "Car buying", "angle": "The out-the-door number versus the ad, and the question to ask."}, {"name": "Car Collecting", "angle": "One car, the year, and why it is in the garage."}, {"name": "Car mods", "angle": "Before, the part, after — and whether it was worth it."}, {"name": "Electric cars & lorries", "angle": "Range reality on a normal day, not the brochure loop."}, {"name": "Heavy machinery", "angle": "One machine doing the job it was built for."}, {"name": "Motorcycles", "angle": "A start-up, a line, and the gear that matters."}, {"name": "RVs & campers", "angle": "Layout tour and the one storage trick that saves the trip."}, {"name": "Trains", "angle": "A pass-by or a route note people can ride."}, {"name": "Trucks (vehicle)", "angle": "Tow test, bed use, or the spec that decides the buy."}, {"name": "Vintage & classic cars", "angle": "Cold start, story, and the part you are hunting."}, {"name": "Watercraft", "angle": "Launch, line, and the condition call."}, {"name": "Road and traffic conditions", "angle": "A clear report: where, when, and the alternate."}, {"name": "Road trips", "angle": "Stop list, drive time, and the meal worth the detour."}]}, {"id": "visual", "name": "Visual Arts, Architecture & Crafts", "kicker": "Core taxonomy", "blurb": "Process is the content. Finished shots are the thumbnail.", "items": [{"name": "AI Art (visual artwork)", "angle": "Prompt, first frame, and the edit that made it yours."}, {"name": "Architecture", "angle": "One building, the line you notice, and who designed it."}, {"name": "Art exhibitions", "angle": "Three works, one room, and why this show is up now."}, {"name": "Art History", "angle": "One painting, the year, and the detail people walk past."}, {"name": "Art Market", "angle": "A sale, the number, and what it says about taste right now."}, {"name": "Graphic design", "angle": "Brief to final, with the type and the rejected version."}, {"name": "Photography", "angle": "The setup, the frame, and the one setting that mattered."}, {"name": "Sculpture", "angle": "Material, tool, and the form appearing over time."}, {"name": "Metalworking", "angle": "Heat, hammer, and the join. Safety in frame."}, {"name": "Paper craft", "angle": "Fold by fold, with the template link in the caption."}, {"name": "Woodworking", "angle": "Cut list, joint, and the finish coat."}]}, {"id": "disc-pets", "name": "Cute & Exotic Pets", "kicker": "Discovery interest", "blurb": "From the discovery taxonomy. Narrower than Animals & Pets, and often easier to own.", "items": [{"name": "Cute Cats", "angle": "A routine — window, bowl, nap — filmed the same way each day."}, {"name": "Cute Dogs", "angle": "One trick or one walk moment, name on screen."}, {"name": "Exotic & Small Pets", "angle": "Care basics first. Cute second. Species named clearly."}, {"name": "Pet Stories", "angle": "A rescue or a quirk, told in under a minute."}, {"name": "Pet Toy & Accessories", "angle": "Does the pet actually use it? Film the test."}]}, {"id": "disc-art", "name": "Drawing, Street & Video Craft", "kicker": "Discovery interest", "blurb": "Hands in frame. The making is the post.", "items": [{"name": "Drawing & Painting", "angle": "Time-lapse with the reference and the medium named."}, {"name": "Other Fine Arts", "angle": "One discipline, one piece, the choice that defines it."}, {"name": "Street Art", "angle": "Wall, process, and the neighborhood context."}, {"name": "Videography Techniques", "angle": "One camera move or grade, before and after."}]}, {"id": "disc-auto", "name": "Auto Life & Machines", "kicker": "Discovery interest", "blurb": "Commentary and lifestyle sit next to the build. Pick a lane.", "items": [{"name": "Automobile Commentary", "angle": "A take on a model or a news item, with the spec on screen."}, {"name": "Automotive Lifestyle", "angle": "Meet, drive, or garage hour — the culture, not just the car."}, {"name": "Luxury & Sports Cars", "angle": "Detail walk and the one number that justifies the watch."}, {"name": "Machines & Power Tools", "angle": "The tool doing one job, plus the bit or blade that matters."}, {"name": "Mechanical Engineering", "angle": "How a mechanism works, drawn or pulled apart."}]}, {"id": "disc-beauty", "name": "Beauty & Skin", "kicker": "Discovery interest", "blurb": "Skin type and lighting honesty beat a perfect finish.", "items": [{"name": "Beauty Product Reviews", "angle": "Wear test at hour one and hour eight."}, {"name": "Makeup Tutorials", "angle": "One look, steps numbered, products named as you go."}, {"name": "Skincare", "angle": "Routine in order, and the ingredient doing the work."}]}, {"id": "disc-celebrity", "name": "Writers & Celebrity", "kicker": "Discovery interest", "blurb": "Fandom works when you add a read, not just a repost.", "items": [{"name": "Writers & Writing", "angle": "A page, a line edit, or a prompt people can use tonight."}, {"name": "Celebrity Fandom", "angle": "A deep cut — era, interview, or detail casual fans miss."}, {"name": "Celebrity Fashion", "angle": "The look, the reference, and a version at a real budget."}, {"name": "Celebrity Interviews", "angle": "The quote, the context, and what they did not say."}, {"name": "Celebrity Lifestyle", "angle": "Routine or house tour angle, sourced, not invented."}, {"name": "Celebrity Royals", "angle": "The appearance, the protocol, and the one detail."}, {"name": "Celebrity Spotlight", "angle": "Why this person is in the conversation this week."}]}, {"id": "disc-comedy", "name": "Comedy & Humor", "kicker": "Discovery interest", "blurb": "Formats repeat. Pick one and post it until it is yours.", "items": [{"name": "Campus Comedy", "angle": "A class, a dorm, a deadline — one recognizable pain."}, {"name": "Cartoon / Animation", "angle": "A short gag with a clear character and a loopable end."}, {"name": "Comedy Challenges", "angle": "State the challenge in the first line, then do it."}, {"name": "Comedy Dubbing", "angle": "Original picture, new line, cut on the reaction."}, {"name": "Comedy Remixes", "angle": "A known clip, a new punch, credit the source."}, {"name": "Epic Fails", "angle": "The attempt, the fail, the laugh. No humiliation for its own sake."}, {"name": "Humorous Moments", "angle": "A real moment, held one beat longer than feels natural."}, {"name": "Humorous Signs", "angle": "The sign, a zoom, and your one-line read."}, {"name": "Jokes & Humorous Conversations", "angle": "Setup and button. Text on screen if the audio is messy."}, {"name": "Reaction Comedy", "angle": "Watch something, react once, cut the dead air."}, {"name": "Satires & Spoofs", "angle": "Name the target, mirror the format, land one point."}, {"name": "Workplace Humor", "angle": "A meeting, a Slack message, a Monday. Relatable, not cruel."}]}, {"id": "disc-craft", "name": "Make & Mend", "kicker": "Discovery interest", "blurb": "Satisfying process. Name the materials so people can start.", "items": [{"name": "Floral", "angle": "Arrangement from grocery stems, with the shape called out."}, {"name": "Knitting & Sewing", "angle": "Stitch, project stage, and time-to-finish honestly."}, {"name": "Leather Goods", "angle": "Cut, stitch, finished edge."}, {"name": "Slime Making", "angle": "Mix, texture test, and the ratio on screen."}, {"name": "Soap & Candle Making", "angle": "Pour, cure note, and scent named."}]}, {"id": "disc-diy", "name": "DIY & Restorations", "kicker": "Discovery interest", "blurb": "Before, problem, after. Budget in the caption.", "items": [{"name": "DIY How-To", "angle": "Tools list first, then the steps in order."}, {"name": "Hacks, Tips & Tricks", "angle": "One hack, filmed where the problem actually happens."}, {"name": "Restorations & Upscales", "angle": "The broken object, the fix, the reveal."}]}, {"id": "disc-style", "name": "Get Ready & Shop", "kicker": "Discovery interest", "blurb": "Personal and seasonal. Say who the look or the buy is for.", "items": [{"name": "Get Ready with Me", "angle": "Get ready for a real plan, talking through each choice."}, {"name": "Seasonal Trends", "angle": "Three trends, and the one you would skip."}, {"name": "Shopping Guides", "angle": "A budget tier and the exact item to copy."}]}, {"id": "disc-biz", "name": "Business & Money", "kicker": "Discovery interest", "blurb": "Specific numbers and stories. Vague motivation does not save.", "items": [{"name": "Business Strategy", "angle": "One decision, the tradeoff, and what you would do again."}, {"name": "Entrepreneurship & Small Business Ownership", "angle": "A real week: the sale, the problem, the fix."}, {"name": "Money & Finance", "angle": "One concept, a simple example, no get-rich claim."}, {"name": "Success Stories", "angle": "The unglamorous middle, not only the result."}]}, {"id": "disc-fit", "name": "Training Styles", "kicker": "Discovery interest", "blurb": "Program the session. People save workouts they can repeat.", "items": [{"name": "Cardio, Interval & Crossfit Training", "angle": "The clock, the move, the rest. Film one round."}, {"name": "Muscle Building & Strength Training", "angle": "Lift, cue, and the set-rep scheme."}]}, {"id": "disc-food", "name": "Food Formats", "kicker": "Discovery interest", "blurb": "Pick a format and stay in it. Recipes, demos, and taste tests each have a lane.", "items": [{"name": "Baked Goods & Dessert", "angle": "Mix, oven, slice. Temperature on screen."}, {"name": "Fast, Junk & Snack Food", "angle": "Honest review of a run or a snack, with the order."}, {"name": "Food & Beverages", "angle": "A drink or a pairing, built in real time."}, {"name": "Food Demo", "angle": "Hands only, steps numbered, no long intro."}, {"name": "Food During Travel", "angle": "What you ordered, what it cost, whether to copy it."}, {"name": "Food Recipes & Cooking Tips", "angle": "One recipe, one tip that saves the dish."}, {"name": "Kitchenware & Tabletop", "angle": "Use the tool in a real cook, not a shelf shot."}, {"name": "Vegetarian & Vegan", "angle": "A full plate, the protein, and the swap for a common recipe."}]}, {"id": "disc-acgn", "name": "Anime, Games & Fandom", "kicker": "Discovery interest", "blurb": "Fandom plus making. Cosplay, lore, and figures all save well.", "items": [{"name": "ACGN Cosplay", "angle": "Build progress, reference, and the finished look."}, {"name": "ACGN Series", "angle": "One series, the hook, and who it is for."}, {"name": "Anime", "angle": "A scene read or a seasonal pick, spoiler-labeled."}, {"name": "Fantasy & Mythology", "angle": "One figure or tale, and the detail adaptations drop."}, {"name": "Geek Fandom", "angle": "A deep cut from a universe, explained for a new viewer."}, {"name": "Kawaii", "angle": "A small cute object or look, styled simply."}, {"name": "Toys, Figures, & Crafts", "angle": "Unbox, pose, and the line it belongs to."}]}, {"id": "disc-well", "name": "Care & Stillness", "kicker": "Discovery interest", "blurb": "Calm formats. Do not play doctor.", "items": [{"name": "Medical Practitioners", "angle": "A day-in-the-role or a myth, within what you can responsibly say."}, {"name": "Sleep, Meditation & Mindfulness", "angle": "A 60-second practice people can do in bed or at a desk."}]}, {"id": "disc-holiday", "name": "Festivals & Occasions", "kicker": "Discovery interest", "blurb": "Calendar content. Post early, then post the day-of version.", "items": [{"name": "Festivals & Traditions", "angle": "What the day means, and how a family actually marks it."}, {"name": "Holiday Decor", "angle": "A corner of a room, before and after, budget named."}, {"name": "Secular Holidays", "angle": "A simple plan for the day, copyable in an afternoon."}, {"name": "Special Occasions", "angle": "One celebration type: the timeline from invite to toast."}]}, {"id": "disc-house", "name": "House, Garden & Farm", "kicker": "Discovery interest", "blurb": "Tours and fixes. People save rooms they want to copy.", "items": [{"name": "Farms & Ranches", "angle": "A chore, a season, and the animal or crop at the center."}, {"name": "Gardening & Planting", "angle": "What you planted, the light, and the week-two update."}, {"name": "Home Renovations & Repairs", "angle": "Problem, cost, reveal. Keep the messy middle."}, {"name": "House & Room Tours", "angle": "Walk the room and name the one change that mattered."}, {"name": "Interior Design & Decoration", "angle": "A palette, a layout, and the piece that anchors it."}, {"name": "Landscaping", "angle": "Before, the plan, the first season of growth."}, {"name": "Luxury Homes", "angle": "One room, the material, and what is actually livable."}, {"name": "Organization, Storage, & Cleaning", "angle": "One zone, the system, the after."}, {"name": "Small Apartment Design", "angle": "A small-space solve with measurements."}]}, {"id": "disc-social", "name": "Social Formats", "kicker": "Discovery interest", "blurb": "Native Facebook formats. Challenges and street pieces travel.", "items": [{"name": "Augmented Reality (AR) Filters", "angle": "Use the filter in a real moment, then say how you found it."}, {"name": "Nostalgia & Vintage", "angle": "An object or a year, and why it still hits."}, {"name": "Social Media Challenges", "angle": "State the rules, do the thing, tag the format."}, {"name": "Storytelling", "angle": "A story with a turn in the first 5 seconds."}, {"name": "Street Interviews & Performers", "angle": "One question, three answers, or one performance beat."}]}, {"id": "disc-learn", "name": "Facts, Class & Skills", "kicker": "Discovery interest", "blurb": "Trivia saves. Teaching series compound.", "items": [{"name": "Educational Facts & Trivia", "angle": "One fact, the source vibe, and a question to comment."}, {"name": "Lectures & Presentations", "angle": "One slide, one point, spoken like a person."}, {"name": "Skills Building", "angle": "A drill people can practice today, with a checkpoint."}, {"name": "Teachers & Teaching", "angle": "A classroom moment or a method, with the grade level named."}]}, {"id": "disc-life", "name": "Daily Life & Takes", "kicker": "Discovery interest", "blurb": "Personality niches. Consistency of voice matters more than the topic.", "items": [{"name": "Daily Life", "angle": "A slice of the day with one through-line."}, {"name": "Hot Takes", "angle": "A clear opinion, the reason, and room for disagreement."}, {"name": "Look at Me (short form video genre)", "angle": "Direct to camera, one beat, high energy, short."}, {"name": "Storytime", "angle": "Cold open on the worst or best moment, then back up."}]}, {"id": "disc-spirit", "name": "Meaning & Giving", "kicker": "Discovery interest", "blurb": "Quotes work when they are lived. Giving works when it is specific.", "items": [{"name": "Altruism & Giving", "angle": "A specific act, who it helped, and how someone else can join."}, {"name": "Inspiring Quotes & Messages", "angle": "A line, who said it, and what you did with it this week."}, {"name": "Religion & Spirituality", "angle": "A practice or a teaching, offered without pressure."}]}, {"id": "disc-music", "name": "Music Makers", "kicker": "Discovery interest", "blurb": "Original and tutorial both work. Show the hands or the mic.", "items": [{"name": "Backstage", "angle": "The minute before you go on, or the load-in."}, {"name": "Bands & Musicians", "angle": "A song intro and who is in the room."}, {"name": "Home Dance", "angle": "A living-room routine to a named track."}, {"name": "Instrumental Music", "angle": "A phrase on the instrument, then the full pass."}, {"name": "Music Tutorials & Instructions", "angle": "One riff or chord, slow, then at tempo."}, {"name": "Opera", "angle": "A phrase, the translation, and why the note is hard."}, {"name": "Original Music", "angle": "A hook, the story of the song, a lyric on screen."}, {"name": "Singer & Dancer Stars", "angle": "A performance clip with the credit and the song."}, {"name": "Traditional & Culture Dance", "angle": "The dance, the occasion, and one step explained."}]}, {"id": "disc-news", "name": "Entertainment & Sports News", "kicker": "Discovery interest", "blurb": "Speed plus a take. Say what changed.", "items": [{"name": "Entertainment News", "angle": "The item, the source, and why it matters to fans."}, {"name": "Sports News", "angle": "The result or the move, and the next game."}]}, {"id": "disc-outdoor", "name": "Outdoors & Insects", "kicker": "Discovery interest", "blurb": "Field content. Location and season make it useful.", "items": [{"name": "Bugs & Insects", "angle": "Macro, name the species, and one behavior."}, {"name": "Outdoor Activities", "angle": "The activity, the place, and what to bring."}, {"name": "Outdoor Equipment", "angle": "Field test, not a tabletop unbox only."}]}, {"id": "disc-sci", "name": "Science & History", "kicker": "Discovery interest", "blurb": "Wonder with a fact check. One idea per post.", "items": [{"name": "Astronomy & Space Exploration", "angle": "Tonight's sky, or one mission update in plain words."}, {"name": "Formal Sciences", "angle": "A math or logic idea made visible."}, {"name": "History", "angle": "One date, one person, and the part textbooks skip."}, {"name": "Natural Sciences", "angle": "A phenomenon filmed or drawn, then named."}]}, {"id": "disc-sport", "name": "More Sports", "kicker": "Discovery interest", "blurb": "Skill and culture. Trick shots need the make and the miss.", "items": [{"name": "Ball Sports", "angle": "A drill that transfers across ball sports, or one sport named."}, {"name": "College Football", "angle": "A program, a play, or a gameday detail."}, {"name": "Competitions & Events", "angle": "How to watch, who is in, and the moment to wait for."}, {"name": "Extreme & Adventure Sports", "angle": "The line and the safety call. No dare without context."}, {"name": "Lifestyle & Urban Sports", "angle": "A spot, a trick, and the community around it."}, {"name": "Motorsports & Cycling", "angle": "A lap, a bike, or a setup note."}, {"name": "Other Sports", "angle": "Introduce the sport in 20 seconds, then show a point."}, {"name": "Precision Sports", "angle": "The shot, the aim point, and the result."}, {"name": "Pro Wrestling", "angle": "A spot explained, with the line between work and news."}, {"name": "Tennis & Pickleball", "angle": "A point pattern or a serve cue."}, {"name": "Traditional & Cultural Sports", "angle": "The rules in a minute, then a match moment."}, {"name": "Trick Shots", "angle": "The setup, the make, and one miss so it feels real."}]}, {"id": "disc-mystery", "name": "Mystery & the Unexplained", "kicker": "Discovery interest", "blurb": "Label speculation. Curiosity is the format, certainty is not.", "items": [{"name": "Aliens & UFO", "angle": "The report, the date, and what is still unknown."}, {"name": "Astrology & Divination", "angle": "A reading frame for the week, offered as reflection not fate."}, {"name": "Cryptids", "angle": "The story, the region, and the skeptical read beside it."}, {"name": "Ghosts, Spirits & Hauntings", "angle": "The account, the place, and the other explanations."}]}, {"id": "disc-screen", "name": "Screen & Series", "kicker": "Discovery interest", "blurb": "Clips and talk. Credit the show. Mark spoilers.", "items": [{"name": "Behind the Scenes", "angle": "A set detail or a process the audience never sees."}, {"name": "Movie & TV Clips", "angle": "A moment, why it works, and the title on screen."}, {"name": "Scripted Dramatic Content", "angle": "A scene beat: want, obstacle, turn."}, {"name": "TV Variety & Talk Shows", "angle": "The segment, the guest, and the line that landed."}, {"name": "Web Series", "angle": "Episode hook and where to start if you are new."}]}, {"id": "disc-tech", "name": "Builds & Software", "kicker": "Discovery interest", "blurb": "Show the build. Screen recordings need a voice.", "items": [{"name": "Aerospace Technology", "angle": "One system, what it does, in plain language."}, {"name": "Computer Technology & Software", "angle": "A problem, the tool, the click path."}, {"name": "Smart & Eco-Homes", "angle": "One device or upgrade, the bill or the comfort change."}, {"name": "Tech Builds & Repairs", "angle": "Tear-down, the failed part, the fix."}]}, {"id": "disc-play", "name": "Cards, Party & Puzzles", "kicker": "Discovery interest", "blurb": "Play on camera. Rules in the caption.", "items": [{"name": "Card & Party Games", "angle": "Teach by dealing one hand."}, {"name": "Puzzles & Mysteries", "angle": "A puzzle with the answer held to the last second."}]}, {"id": "disc-places", "name": "Places & Parks", "kicker": "Discovery interest", "blurb": "Name the place. Generic scenery does not get saved.", "items": [{"name": "Cities & Urban Exploration", "angle": "A block, a building, and how you got there."}, {"name": "Scenic Vistas & Sights", "angle": "The viewpoint, the hour, and the walk in."}, {"name": "Sight-Seeing", "angle": "A one-day route with the stop you would not skip."}, {"name": "Theme Parks", "angle": "The ride, the wait, and whether it is worth it today."}]}, {"id": "disc-gameplay", "name": "Gameplay & VR", "kicker": "Discovery interest", "blurb": "Show play. Merchandise is the secondary post, not the only one.", "items": [{"name": "Game Merchandise", "angle": "The item, the game, and whether it is worth the shelf."}, {"name": "Game Overview", "angle": "What it is, who it is for, in under 30 seconds."}, {"name": "Gameplay", "angle": "A clean clip of a decision, with the game named."}, {"name": "VR Gaming", "angle": "Headset on, what you see, and how your body moves."}]}];
+const board = document.getElementById('board');
+const chips = document.getElementById('chips');
+const q = document.getElementById('q');
+const shown = document.getElementById('shown');
+const empty = document.getElementById('empty');
+let active = 'all';
+
+function esc(s){return s.replace(/[&<>"']/g, c => ({'&':'&','<':'<','>':'>','"':'"',"'":'&#39;'}[c]));}
+
+function renderChips(){
+  const all = [{id:'all', name:'All lanes'}, {id:'core', name:'Core taxonomy'}, {id:'disc', name:'Discovery'}].concat(DATA.map(c => ({id:c.id, name:c.name})));
+  chips.innerHTML = all.map(c => `<button class="chip${c.id===active?' on':''}" data-id="${c.id}">${esc(c.name)}</button>`).join('');
+  chips.querySelectorAll('.chip').forEach(btn => btn.onclick = () => { active = btn.dataset.id; renderChips(); render(); });
+}
+
+function render(){
+  const term = q.value.trim().toLowerCase();
+  let count = 0;
+  board.innerHTML = DATA.map(cat => {
+    if (active !== 'all' && active !== 'core' && active !== 'disc' && active !== cat.id) return '';
+    if (active === 'core' && cat.kicker !== 'Core taxonomy') return '';
+    if (active === 'disc' && cat.kicker === 'Core taxonomy') return '';
+    const items = cat.items.filter(it => {
+      if (!term) return true;
+      return (it.name + ' ' + it.angle + ' ' + cat.name).toLowerCase().includes(term);
+    });
+    if (!items.length) return '';
+    count += items.length;
+    return `<section class="section" id="${cat.id}">
+      <div class="section-head">
+        <div><div class="tag">${esc(cat.kicker)}</div><h2>${esc(cat.name)}</h2><p class="blurb">${esc(cat.blurb)}</p></div>
+        <div class="count-pill">${items.length} niche${items.length===1?'':'s'}</div>
+      </div>
+      <div class="grid">${items.map(it => `<article class="card">
+        <h3>${esc(it.name)}</h3>
+        <p>${esc(it.angle)}</p>
+        <div class="row"><span class="parent">${esc(cat.name)}</span><button class="copy" type="button" data-copy="${esc(it.name)} — ${esc(it.angle)}">Copy angle</button></div>
+      </article>`).join('')}</div>
+    </section>`;
+  }).join('');
+  shown.textContent = count + ' niche' + (count===1?'':'s') + ' showing';
+  empty.style.display = count ? 'none' : 'block';
+  board.querySelectorAll('.copy').forEach(btn => btn.onclick = async () => {
+    try { await navigator.clipboard.writeText(btn.dataset.copy); btn.textContent = 'Copied'; setTimeout(()=>btn.textContent='Copy angle', 1200); }
+    catch(e){ btn.textContent = 'Select to copy'; }
+  });
+}
+document.getElementById('clear').onclick = () => { q.value=''; active='all'; renderChips(); render(); };
+q.oninput = render;
+renderChips();
+render();
+</script>
+</body>
+</html>
